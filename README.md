@@ -1,2 +1,2 @@
 # node-red-contrib-siemens-sentron
-A node-RED nodes to read Siemens SENTRON series over Modbus TCP/IP. 
+A node-RED nodes to read electrical measures from Siemens SENTRON series over Modbus TCP/IP. 
