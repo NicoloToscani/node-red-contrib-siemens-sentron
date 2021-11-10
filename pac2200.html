@@ -1,0 +1,72 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pac2200',{
+        category: 'sentron',
+        color: '#009999',
+        defaults: {
+            name: {value:""},
+            unitId: {value: "",required:true},
+            data: {value: "", required: true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "serial.png",
+        label: function() {
+            return this.name||"pac2200";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pac2200">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-unitId"><i class="icon-tag"></i> Unit ID</label>
+        <input type="text" id="node-input-unitId" placeholder=" 123">
+    </div>
+    <div class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="voltage-L1N">Voltage L1-N</option>
+           <option value="voltage-L2N">Voltage L2-N</option>
+           <option value="voltage-L3N">Voltage L3-N</option>
+           <option value="voltage-L1L2">Voltage L1-L2</option>
+           <option value="voltage-L2L3">Voltage L2-L3</option>
+           <option value="voltage-L3L1">Voltage L3-L1</option>
+           <option value="currentL1">Current L1</option>
+           <option value="currentL2">Current L2</option>
+           <option value="currentL3">Current L3</option>
+           <option value="appPowerL1">Apparent power L1</option>
+           <option value="appPowerL2">Apparent power L2</option>
+           <option value="appPowerL3">Apparent power L3</option>
+           <option value="actPowerL1">Active power L1</option>
+           <option value="actPowerL2">Active power L2</option>
+           <option value="actPowerL3">Active power L3</option>
+           <option value="reactPowerL1">Reactive power L1</option>
+           <option value="reactPowerL2">Reactive power L2</option>
+           <option value="reactPowerL3">Reactive power L3</option>
+           <option value="pFactorL1">Power factor L1</option>
+           <option value="pFactorL2">Power factor L2</option>
+           <option value="pFactorL3">Power factor L3</option>
+           <option value="frequency">Frequency</option>
+           <option value="voltageLN-avg">Average voltage L-N</option>
+           <option value="voltageLL-avg">Average voltage L-L</option>
+           <option value="current-avg">Average current</option>
+           <option value="appPower-tot">Total apparent power</option>
+           <option value="actPower-tot">Total active power</option>
+           <option value="reactPower-tot">Total reactive power</option>
+           <option value="pf-tot">Total power factor</option>
+           <option value="current-In">Neutral current</option>
+           <option value="actEnergyImp">Active energy import</option>
+           <option value="reactEnergyImp">Reactive energy import</option>
+           <option value="actEnergyExp">Active energy export</option>
+           <option value="reactEnergyExp">Reactive energy export</option>
+       </select>
+   </div>
+  
+</script>
+
+<script type="text/x-red" data-help-name="pac2200">
+    <p>This node resumes the configuration parameters that are necessary to poll a Siemens SENTRON PAC2200 series over Modbus TCP/IP. To use this node:<br>1. Enter Unit ID corresponding to the configured Unit ID in the Gateway.<br>2. Select which reading you'd like to measure.<br>3. Add more node to select more data.</p>
+</script>
