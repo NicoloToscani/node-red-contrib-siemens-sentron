@@ -1,0 +1,327 @@
+<script type="text/javascript">
+    RED.nodes.registerType('measure',{
+        category: 'sentron',
+        color: '#009999',
+        defaults: {
+            name: {value:""},
+            unitId: {value: "1",required:true},
+            device: {value: "pac1200",required:true},
+            data: {value: "", required: true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "serial.png",
+        label: function() {
+            return this.name||"measure";
+        },
+        oneditprepare: function() {
+        
+            $("#node-input-device").on("change",function() {
+            
+                if (this.value === "") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                
+                else if (this.value === "pac2200") {
+                    $("#node-input-data-pac2200").show();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                else if (this.value === "pac1200") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").show();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();   
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                else if (this.value === "pac1600") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").show();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();  
+                    $("#node-input-data-powercenter1000").hide(); 
+                } 
+                else if (this.value == "pac3xx0") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").show();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide(); 
+                    $("#node-input-data-powercenter1000").hide();  
+                } 
+                else if (this.value == "pac3200T") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").show();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();   
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                else if (this.value == "pac4200") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").show();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide(); 
+                    $("#node-input-data-powercenter1000").hide();  
+                } 
+                else if (this.value == "pac5200") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").show();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();   
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                else if (this.value == "sem3") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").show();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();   
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                else if (this.value == "atc6300") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").show();
+                    $("#node-input-data-3va").hide();  
+                    $("#node-input-data-powercenter1000").hide(); 
+                } 
+                else if (this.value == "3va") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").show();   
+                    $("#node-input-data-powercenter1000").hide();
+                } 
+                else if (this.value == "powercenter1000") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3xx0").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();  
+                    $("#node-input-data-powercenter1000").show(); 
+                } 
+            }).trigger("change");
+        },
+          
+    });
+</script>
+
+<script type="text/x-red" data-template-name="measure">
+        
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-unitId"><i class="icon-tag"></i> Unit ID</label>
+        <input type="text" id="node-input-unitId" placeholder=" 123">
+    </div>
+    <div class="form-row">
+        <label for="node-input-device"><i class="icon-tag"></i> Device</label>
+        <select id="node-input-device" name="node-input-device">
+           <option value="pac1200">PAC1200</option>
+           <option value="pac1600">PAC1600</option>
+           <option value="pac2200">PAC2200</option>
+           <option value="pac3xx0">PAC3xx0</option>
+           <option value="pac3200T">PAC3200T</option>
+           <option value="pac4200">PAC4200</option>
+           <option value="pac5200">PAC5200</option>
+           <option value="sem3">SEM3</option>
+           <option value="atc6300">ATC6300</option>
+           <option value="3va">3VA</option>
+           <option value="powercenter1000">Powercenter 1000</option>
+        </select>
+    </div>
+    
+    <div id="node-input-data-pac2200" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="voltage-L1N">Voltage L1-N</option>
+           <option value="voltage-L2N">Voltage L2-N</option>
+           <option value="voltage-L3N">Voltage L3-N</option>
+           <option value="voltage-L1L2">Voltage L1-L2</option>
+           <option value="voltage-L2L3">Voltage L2-L3</option>
+           <option value="voltage-L3L1">Voltage L3-L1</option>
+           <option value="currentL1">Current L1</option>
+           <option value="currentL2">Current L2</option>
+           <option value="currentL3">Current L3</option>
+           <option value="appPowerL1">Apparent power L1</option>
+           <option value="appPowerL2">Apparent power L2</option>
+           <option value="appPowerL3">Apparent power L3</option>
+           <option value="actPowerL1">Active power L1</option>
+           <option value="actPowerL2">Active power L2</option>
+           <option value="actPowerL3">Active power L3</option>
+           <option value="reactPowerL1">Reactive power L1</option>
+           <option value="reactPowerL2">Reactive power L2</option>
+           <option value="reactPowerL3">Reactive power L3</option>
+           <option value="pFactorL1">Power factor L1</option>
+           <option value="pFactorL2">Power factor L2</option>
+           <option value="pFactorL3">Power factor L3</option>
+           <option value="frequency">Frequency</option>
+           <option value="voltageLN-avg">Average voltage L-N</option>
+           <option value="voltageLL-avg">Average voltage L-L</option>
+           <option value="current-avg">Average current</option>
+           <option value="appPower-tot">Total apparent power</option>
+           <option value="actPower-tot">Total active power</option>
+           <option value="reactPower-tot">Total reactive power</option>
+           <option value="pf-tot">Total power factor</option>
+           <option value="current-In">Neutral current</option>
+           <option value="actEnergyImp">Active energy import</option>
+           <option value="reactEnergyImp">Reactive energy import</option>
+           <option value="actEnergyExp">Active energy export</option>
+           <option value="reactEnergyExp">Reactive energy export</option>
+       </select>
+   </div>
+   
+   <div id="node-input-data-pac1200" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="voltage-L1N">Voltage L1-N</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-pac1600" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="voltage-L2N">Voltage L2-N</option>  
+       </select>
+   </div> 
+   
+   <div id="node-input-data-pac3xx0" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="currentL3">Current L3</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-pac3200T" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="currentL3">Current L3</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-pac4200" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="voltage-L2L3">Voltage L2-L3</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-pac5200" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="pFactorL3">Power factor L3</option> 
+       </select>
+   </div> 
+   
+   <div id="node-input-data-sem3" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="actPower-tot">Total active power</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-atc6300" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="reactEnergyExp">Reactive energy export</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-3va" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="actEnergyExp">Active energy export</option>
+           <option value="reactEnergyExp">Reactive energy export</option>
+       </select>
+   </div> 
+   
+   <div id="node-input-data-powercenter1000" class="form-row">
+       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data">
+           <option value="actEnergyExp">Active energy export</option>
+           <option value="reactEnergyExp">Reactive energy export</option>
+       </select>
+   </div> 
+  
+</script>
+
+<script type="text/x-red" data-help-name="measure">
+    <p>This node resumes the configuration parameters that are necessary to poll a Siemens SENTRON PAC2200 series over Modbus TCP/IP. To use this node:<br>1. Enter Unit ID corresponding to the configured Unit ID in the device.<br>2. Select which reading you'd like to measure.<br>3. Add more node to select more data.</p>
+</script>
