@@ -40,9 +40,9 @@ List of **PAC2200** meter data:
 |  Apparent power L1                 | VA                    | Float         |
 |  Apparent power L2                 | VA                    | Float         |
 |  Apparent power L3                 | VA                    | Float         |
-|  Active power L1                   | w                     | Float         |
-|  Active power L2                   | w                     | Float         |
-|  Active power L3                   | w                     | Float         |
+|  Active power L1                   | W                     | Float         |
+|  Active power L2                   | W                     | Float         |
+|  Active power L3                   | W                     | Float         |
 |  Reactive power L1                 | var                   | Float         |
 |  Reactive power L2                 | var                   | Float         |
 |  Reactive power L3                 | var                   | Float         |
@@ -54,13 +54,13 @@ List of **PAC2200** meter data:
 |  Average voltage L-L               | V                     | Float         |
 |  Average current                   | A                     | Float         |
 |  Total apparent power              | VA                    | Float         |
-|  Total active power                | w                     | Float         |
+|  Total active power                | W                     | Float         |
 |  Total reactive power              | var                   | Float         |
 |  Total power factor                | -                     | Float         |
 |  Neutral current                   | A                     | Float         |
 |  Active energy import              | Wh                    | Float         |
 |  Reactive energy import            | varh                  | Float         |
-|  Active energy export              | wh                    | Float         |
+|  Active energy export              | Wh                    | Float         |
 |  Reactive energy export            | varh                  | Float         |
 
 ### Device type
