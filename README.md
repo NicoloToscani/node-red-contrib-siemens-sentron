@@ -63,12 +63,17 @@ List of **PAC2200** meter data:
 |  Active energy export              | wh                    | Float         |
 |  Reactive energy export            | varh                  | Float         |
 
+### Device type
+![data-config](docs/device-config.png)
 
 ### Meter data 
-<!---   ![data-config](docs/data-config.png)   --->
+![data-config](docs/data-config.png)
+
+### Message object 
+![data-config](docs/message-format.png)
 
 ### Sample flow
-<!---   ![sample-flow](docs/sample-flow.png)   --->
+![sample-flow](docs/sample-flow.png)
 
 ## Equipment compatibility
 
