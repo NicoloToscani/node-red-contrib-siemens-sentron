@@ -77,5 +77,5 @@ List of **PAC2200** meter data:
 
 ## Equipment compatibility
 
-These modules has been developed and tested on:
+These modules have been developed and tested on:
 + SENTRON PAC2200
