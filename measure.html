@@ -14,6 +14,7 @@
         label: function() {
             return this.name||"measure";
         },
+        <!--When the config screen is opened-->
         oneditprepare: function() {
         
             $("#node-input-device").on("change",function() {
@@ -176,7 +177,103 @@
                     $("#node-input-data-powercenter1000").show(); 
                 } 
             }).trigger("change");
-        },
+        }, 
+        
+        <!--When the config screen is closed ('done' button)-->
+        oneditsave: function () {
+        
+             <!--Check wich device type is selected-->
+             let deviceType = $("#node-input-device option:selected");
+             
+                    <!--PAC2200-->
+                    if(deviceType.val() == "pac2200") {
+                        
+                        let dataValue = $("#node-input-data-pac2200 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC1200-->
+                    if(deviceType.val() == "pac1200") {
+                        
+                        let dataValue = $("#node-input-data-pac1200 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC1600-->
+                    if(deviceType.val() == "pac1600") {
+                        
+                        let dataValue = $("#node-input-data-pac1600 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC3xx0-->
+                    if(deviceType.val() == "pac3xx0") {
+                        
+                        let dataValue = $("#node-input-data-pac3xx0 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC3200T-->
+                    if(deviceType.val() == "pac3200T") {
+                        
+                        let dataValue = $("#node-input-data-pac3200T option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC4200-->
+                    if(deviceType.val() == "pac4200") {
+                        
+                        let dataValue = $("#node-input-data-pac4200 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC5200-->
+                    if(deviceType.val() == "pac5200") {
+                        
+                        let dataValue = $("#node-input-data-pac5200 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--Sem3-->
+                    if(deviceType.val() == "sem3") {
+                        
+                        let dataValue = $("#node-input-data-sem3 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--Atc6300-->
+                    if(deviceType.val() == "atc6300") {
+                        
+                        let dataValue = $("#node-input-data-atc6300 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--3va-->
+                    if(deviceType.val() == "3va") {
+                        
+                        let dataValue = $("#node-input-data-3va option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--Powercenter1000-->
+                    if(deviceType.val() == "powercenter1000") {
+                        
+                        let dataValue = $("#node-input-data-powercenter1000 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+             
+        }
           
     });
 </script>
@@ -204,13 +301,13 @@
            <option disabled value="sem3">SEM3</option>
            <option disabled value="atc6300">ATC6300</option>
            <option disabled value="3va">3VA</option>
-           <option disabled value="powercenter1000">Powercenter 1000</option>
+           <option value="powercenter1000">Powercenter 1000</option>
         </select>
     </div>
     
     <div id="node-input-data-pac2200" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
+       <label for="node-input-data-pac2200"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac2200">
            <option value="voltage-L1N">Voltage L1-N</option>
            <option value="voltage-L2N">Voltage L2-N</option>
            <option value="voltage-L3N">Voltage L3-N</option>
@@ -248,80 +345,99 @@
        </select>
    </div>
    
+   
+   <div id="node-input-data-powercenter1000" class="form-row">
+       <label for="node-input-data-powercenter1000"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-powercenter1000">
+           <option value="temperature-inst">Current temperature</option>
+           <option value="temperature-avg">Average temperature</option>
+           <option value="current-inst">Actual current L</option>
+           <option value="current-avg">Average current L</option>
+           <option value="current-max">Maximum current L</option>
+           <option value="voltage-LN">L-N voltage</option>
+           <option value="frequency">Line frequency</option>
+           <option value="actPower-L">Active power L</option>
+           <option value="appPower-L">Apparent power L</option>
+           <option value="reactPower-L">Reactive power L</option>
+           <option value="pFactor-L">Power factor L</option>
+           <option value="actEnergyImp">Imported active energy</option>
+           <option value="actEnergyExp">Exported active energy</option>
+           <option value="reactEnergyImp">Imported reactive energy</option>
+           <option value="reactEnergyExp">Exported reactive energy</option>
+           <option value="status">Status protection devices</option>
+           <option value="alarmsStatus">Alarms status</option>
+           <option value="mecOperCycles">Mechanical operating cycles</option>
+           <option value="tripOpers">Tripping operations</option>
+           <option value="shortCircTrip">Short-circuit trips</option>
+       </select>
+   </div> 
+   
    <div id="node-input-data-pac1200" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="voltage-L1N">Voltage L1-N</option>
+       <label for="node-input-data-pac1200"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac1200">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-pac1600" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="voltage-L2N">Voltage L2-N</option>  
+       <label for="node-input-data-pac1600"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac1600">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-pac3xx0" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="currentL3">Current L3</option>
+       <label for="node-input-data-pac3xx0"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac3xx0">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-pac3200T" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="currentL3">Current L3</option>
+       <label for="node-input-data-pac3200T"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac3200T">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-pac4200" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="voltage-L2L3">Voltage L2-L3</option>
+       <label for="node-input-data-pac4200"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac4200">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-pac5200" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="pFactorL3">Power factor L3</option> 
+       <label for="node-input-data-pac5200"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-pac5200">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-sem3" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="actPower-tot">Total active power</option>
+       <label for="node-input-data-sem3"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-sem3">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-atc6300" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="reactEnergyExp">Reactive energy export</option>
+       <label for="node-input-data-atc6300"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-atc6300">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
    <div id="node-input-data-3va" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="actEnergyExp">Active energy export</option>
-           <option value="reactEnergyExp">Reactive energy export</option>
+       <label for="node-input-data-3va"><i class="icon-list"></i> Measure</label>
+       <select id="node-input-data-3va">
+           <option value="to-do">ToDo</option>
        </select>
    </div> 
    
-   <div id="node-input-data-powercenter1000" class="form-row">
-       <label for="node-input-data"><i class="icon-list"></i> Measure</label>
-       <select id="node-input-data">
-           <option value="actEnergyExp">Active energy export</option>
-           <option value="reactEnergyExp">Reactive energy export</option>
-       </select>
-   </div> 
   
 </script>
 
 <script type="text/x-red" data-help-name="measure">
-    <p>This node resumes the configuration parameters that are necessary to poll a Siemens SENTRON PAC2200 series over Modbus TCP/IP. To use this node:<br>1. Enter Unit ID corresponding to the configured Unit ID in the device.<br>2. Select device type. <br>3. Select which information you want to request from the device.<br>4. Add more node to select more data.</p>
+    <p>This node resumes the configuration parameters that are necessary to poll a Siemens SENTRON series over Modbus TCP/IP. To use this node:<br>1. Enter Unit ID corresponding to the configured Unit ID in the device.<br>2. Select device type. <br>3. Select which information you want to request from the device.<br>4. Add more node to select more data.</p>
 </script>
