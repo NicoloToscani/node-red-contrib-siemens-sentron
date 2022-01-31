@@ -1677,7 +1677,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3072,
+                      address: 3071,
                       quantity: 2,
                       };
                   res.topic = "temperature-inst";
@@ -1690,7 +1690,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3074,
+                      address: 3073,
                       quantity: 2,
                       };
                   res.topic = "temperature-avg";
@@ -1703,7 +1703,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3076,
+                      address: 3075,
                       quantity: 2,
                       };
                   res.topic = "current-inst";
@@ -1716,7 +1716,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3078,
+                      address: 3077,
                       quantity: 2,
                       };
                   res.topic = "current-avg";
@@ -1729,7 +1729,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3080,
+                      address: 3079,
                       quantity: 2,
                       };
                   res.topic = "current-max";
@@ -1742,7 +1742,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3082,
+                      address: 3081,
                       quantity: 2,
                       };
                   res.topic = "voltage-LN";
@@ -1755,7 +1755,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3084,
+                      address: 3083,
                       quantity: 2,
                       };
                   res.topic = "frequency";
@@ -1768,7 +1768,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3086,
+                      address: 3085,
                       quantity: 2,
                       };
                   res.topic = "actPower";
@@ -1781,7 +1781,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3088,
+                      address: 3087,
                       quantity: 2,
                       };
                   res.topic = "appPower";
@@ -1794,7 +1794,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3090,
+                      address: 3089,
                       quantity: 2,
                       };
                   res.topic = "reactPower";
@@ -1807,7 +1807,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3092,
+                      address: 3091,
                       quantity: 2,
                       };
                   res.topic = "pFactor";
@@ -1820,7 +1820,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3094,
+                      address: 3093,
                       quantity: 4,
                       };
                   res.topic = "actEnergyImp";
@@ -1833,7 +1833,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3098,
+                      address: 3097,
                       quantity: 4,
                       };
                   res.topic = "actEnergyExp";
@@ -1846,7 +1846,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3102,
+                      address: 3101,
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImp";
@@ -1859,7 +1859,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3106,
+                      address: 3105,
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExp";
@@ -1872,7 +1872,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 3110,
+                      address: 3109,
                       quantity: 1,
                       };
                   res.topic = "status";
@@ -1885,7 +1885,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 2560,
+                      address: 2559,
                       quantity: 2,
                       };
                   res.topic = "alarmsStatus";
@@ -1898,7 +1898,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 2593,
+                      address: 2592,
                       quantity: 2,
                       };
                   res.topic = "mecOperCycles";
@@ -1911,7 +1911,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 2602,
+                      address: 2601,
                       quantity: 2,
                       };
                   res.topic = "tripOpers";
@@ -1924,7 +1924,7 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 2624,
+                      address: 2623,
                       quantity: 2,
                       };
                   res.topic = "shortCircTrip";
