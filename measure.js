@@ -1764,53 +1764,53 @@ module.exports = function(RED) {
                   res.model = "powercenter1000";
                 break;
                 case 7:
-                case "actPower":
+                case "actPower-L":
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
                       address: 3085,
                       quantity: 2,
                       };
-                  res.topic = "actPower";
+                  res.topic = "actPower-L";
                   res.format = "float32";
                   res.unit = "W";
                   res.model = "powercenter1000";
                 break;
                 case 8:
-                case "appPower":
+                case "appPower-L":
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
                       address: 3087,
                       quantity: 2,
                       };
-                  res.topic = "appPower";
+                  res.topic = "appPower-L";
                   res.format = "float32";
                   res.unit = "VA";
                   res.model = "powercenter1000";
                 break;
                 case 9:
-                case "reactPower":
+                case "reactPower-L":
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
                       address: 3089,
                       quantity: 2,
                       };
-                  res.topic = "reactPower";
+                  res.topic = "reactPower-L";
                   res.format = "float32";
                   res.unit = "var";
                   res.model = "powercenter1000";
                 break;
                 case 10:
-                case "pFactor":
+                case "pFactor-L":
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
                       address: 3091,
                       quantity: 2,
                       };
-                  res.topic = "pFactor";
+                  res.topic = "pFactor-L";
                   res.format = "float32";
                   res.unit = "";
                   res.model = "powercenter1000";
