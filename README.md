@@ -26,42 +26,67 @@ Wire the second output of the `Modbus Flex Getter` to the input of the `getter`.
 ## Usage
 List of **PAC2200** meter data:
 
-| Measure                            | Units                 | Type          | 
-| ---------------------------------- | --------------------- | ------------- | 
-|  Voltage L1-N                      | V                     | Float         | 
-|  Voltage L2-N                      | V                     | Float         |
-|  Voltage L3-N                      | V                     | Float         |
-|  Voltage L1-L2                     | V                     | Float         |
-|  Voltage L2-L3                     | V                     | Float         |
-|  Voltage L3-L1                     | V                     | Float         |
-|  Current L1                        | A                     | Float         |
-|  Current L2                        | A                     | Float         |
-|  Current L3                        | A                     | Float         |
-|  Apparent power L1                 | VA                    | Float         |
-|  Apparent power L2                 | VA                    | Float         |
-|  Apparent power L3                 | VA                    | Float         |
-|  Active power L1                   | W                     | Float         |
-|  Active power L2                   | W                     | Float         |
-|  Active power L3                   | W                     | Float         |
-|  Reactive power L1                 | var                   | Float         |
-|  Reactive power L2                 | var                   | Float         |
-|  Reactive power L3                 | var                   | Float         |
-|  Power factor L1                   | -                     | Float         |
-|  Power factor L2                   | -                     | Float         |
-|  Power factor L3                   | -                     | Float         |
-|  Frequency                         | Hz                    | Float         |
-|  Average voltage L-N               | V                     | Float         |
-|  Average voltage L-L               | V                     | Float         |
-|  Average current                   | A                     | Float         |
-|  Total apparent power              | VA                    | Float         |
-|  Total active power                | W                     | Float         |
-|  Total reactive power              | var                   | Float         |
-|  Total power factor                | -                     | Float         |
-|  Neutral current                   | A                     | Float         |
-|  Active energy import              | Wh                    | Float         |
-|  Reactive energy import            | varh                  | Float         |
-|  Active energy export              | Wh                    | Float         |
-|  Reactive energy export            | varh                  | Float         |
+| Measure                            | Units                 | Type            | 
+| ---------------------------------- | --------------------- | --------------- | 
+|  Voltage L1-N                      | V                     | Float 32        | 
+|  Voltage L2-N                      | V                     | Float 32        |
+|  Voltage L3-N                      | V                     | Float 32        |
+|  Voltage L1-L2                     | V                     | Float 32        |
+|  Voltage L2-L3                     | V                     | Float 32        |
+|  Voltage L3-L1                     | V                     | Float 32        |
+|  Current L1                        | A                     | Float 32        |
+|  Current L2                        | A                     | Float 32        |
+|  Current L3                        | A                     | Float 32        |
+|  Apparent power L1                 | VA                    | Float 32        |
+|  Apparent power L2                 | VA                    | Float 32        |
+|  Apparent power L3                 | VA                    | Float 32        |
+|  Active power L1                   | W                     | Float 32        |
+|  Active power L2                   | W                     | Float 32        |
+|  Active power L3                   | W                     | Float 32        |
+|  Reactive power L1                 | var                   | Float 32        |
+|  Reactive power L2                 | var                   | Float 32        |
+|  Reactive power L3                 | var                   | Float 32        |
+|  Power factor L1                   | -                     | Float 32        |
+|  Power factor L2                   | -                     | Float 32        |
+|  Power factor L3                   | -                     | Float 32        |
+|  Frequency                         | Hz                    | Float 32        |
+|  Average voltage L-N               | V                     | Float 32        |
+|  Average voltage L-L               | V                     | Float 32        |
+|  Average current                   | A                     | Float 32        |
+|  Total apparent power              | VA                    | Float 32        |
+|  Total active power                | W                     | Float 32        |
+|  Total reactive power              | var                   | Float 32        |
+|  Total power factor                | -                     | Float 32        |
+|  Neutral current                   | A                     | Float 32        |
+|  Active energy import              | Wh                    | Float 32        |
+|  Reactive energy import            | varh                  | Float 32        |
+|  Active energy export              | Wh                    | Float 32        |
+|  Reactive energy export            | varh                  | Float 32        |
+
+List of **7KN Powercenter 1000** meter data:
+
+| Measure                            | Units                 | Type            | 
+| ---------------------------------- | --------------------- | --------------- | 
+|  Current temperature               | °C                    | Float 32        |   
+|  Average temperature               | °C                    | Float 32        |
+|  Actual current L                  | A                     | Float 32        |
+|  Average current L                 | A                     | Float 32        |
+|  Maximum current L                 | A                     | Float 32        |
+|  L-N voltage                       | V                     | Float 32        |
+|  Line frequency                    | Hz                    | Float 32        |
+|  Active power L                    | W                     | Float 32        |
+|  Apparent power L                  | VA                    | Float 32        |
+|  Reactive power L                  | var                   | Float 32        |
+|  Power factor L                    | -                     | Float 32        |
+|  Imported active energy            | Wh                    | Float 64        |
+|  Exported actie energy             | Wh                    | Float 64        |
+|  Imported reactive energy          | varh                  | Float 64        |
+|  Exported reactive energy          | varh                  | Float 64        |
+|  Protection device status          | -                     | Unsigned int 16 |
+|  Alarms status                     | -                     | Unsigned int 32 |
+|  Mechanical operating cycles       | -                     | Float 32        |
+|  Tripping operations               | -                     | Float 32        |
+|  Short-circuit trips               | -                     | Float 32        |
 
 ### Device type
 ![data-config](docs/device-configuration.png)
