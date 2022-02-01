@@ -89,6 +89,8 @@ List of **7KN Powercenter 1000** meter data:
 |  Tripping operations               | -                     | Float 32        |
 |  Short-circuit trips               | -                     | Float 32        |
 
+Set unit IDs (1 .. 24) for paired circuit protection devices. 
+
 ### Device type
 ![data-config](docs/device-configuration.png)
 
