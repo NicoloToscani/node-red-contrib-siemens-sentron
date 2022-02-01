@@ -79,4 +79,4 @@ List of **PAC2200** meter data:
 
 These modules have been developed and tested on:
 + SENTRON PAC2200
-+ 7KN Powercenter 1000 with 5SLS6 COM
++ 7KN Powercenter 1000 with 5SL6 COM
