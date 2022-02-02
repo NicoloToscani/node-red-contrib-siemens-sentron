@@ -11,7 +11,7 @@ Alternatively, run the following command in your Node-RED user directory - typic
 
 ## How to use
 
-### meter node
+### measure node
 Use the `measure` node to configure which information you want to request from the device.
 
 Wire the output of the `measure` to the input of the `Modbus Flex Getter` from 'node-red-contrib-modbus' modules.
