@@ -9,11 +9,8 @@ Alternatively, run the following command in your Node-RED user directory - typic
 
         npm install node-red-contrib-siemens-sentron
         
-        
-You must also install `node-red-contrib-modbus` directly from the **Manage Palette** menu in the Node-RED interface.
-
-Alternatively, run the following command in your Node-RED user directory - typically `~/.node-red` on Linux or `%HOMEPATH%\.nodered` on Windows
-        
+You must also install `node-red-contrib-modbus` directly from the **Manage Palette** menu in the Node-RED interface or run the following command 
+       
         npm install node-red-contrib-modbus
                  
 ## How to use
