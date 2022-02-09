@@ -1,11 +1,10 @@
 {
   "name": "node-red-contrib-siemens-sentron",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A node-RED nodes to read electrical measures from Siemens SENTRON series over Modbus TCP/IP",
   "author": "Nicolò Toscani",
   "license": "MIT",
   "node-red": {
-    "version": ">=1.0.6",
     "nodes": {
       "measure": "measure.js",
       "getter": "getter.js"
