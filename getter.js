@@ -23,7 +23,7 @@ module.exports = function(RED) {
                    || msg.model == "pac5200" || msg.model == "sem3" || msg.model == "atc6300" || msg.model == "3va" || msg.model == "powercenter1000" || msg.model == "pac3120"|| msg.model == "pac3220"){
                    
                    // Convert payload
-                   msg.payload = msg.payload.buffer.readDoubleBE(0,8).toFixed(2);
+                   msg.payload = msg.payload.buffer.readDoubleBE().toFixed(2);
                 } 
                 // Send payload
                 node.send(msg);

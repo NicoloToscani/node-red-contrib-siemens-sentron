@@ -213,8 +213,23 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();  
-                    $("#node-input-data-powercenter1000").show(); 
+                    $("#node-input-data-powercenter1000").hide(); 
                 } 
+                else if (this.value == "pac3120") {
+                    $("#node-input-data-pac2200").hide();
+                    $("#node-input-data-pac1200").hide();
+                    $("#node-input-data-pac1600").hide();
+                    $("#node-input-data-pac3100").hide();
+                    $("#node-input-data-pac3120").show();
+                    $("#node-input-data-pac3220").hide();
+                    $("#node-input-data-pac3200T").hide();
+                    $("#node-input-data-pac4200").hide();
+                    $("#node-input-data-pac5200").hide();
+                    $("#node-input-data-sem3").hide();
+                    $("#node-input-data-atc6300").hide();
+                    $("#node-input-data-3va").hide();  
+                    $("#node-input-data-powercenter1000").hide(); 
+                }
             }).trigger("change");
         }, 
         
@@ -252,6 +267,14 @@
                     if(deviceType.val() == "pac3100") {
                         
                         let dataValue = $("#node-input-data-pac3100 option:selected");
+                        this.data = dataValue.val();
+                    
+                    } 
+                    
+                    <!--PAC3120-->
+                    if(deviceType.val() == "pac3120") {
+                        
+                        let dataValue = $("#node-input-data-pac3120 option:selected");
                         this.data = dataValue.val();
                     
                     } 
@@ -357,7 +380,7 @@
            <option value="pac2200">PAC2200</option>
            <option value="pac3100">PAC3100</option>
            <option value="pac3120">PAC3120</option>
-           <option value="pac3120">PAC3220</option>
+           <option value="pac3220">PAC3220</option>
            <option value="pac3200T">PAC3200T</option>
            <option value="pac4200">PAC4200</option>
            <option value="pac5200">PAC5200</option>
