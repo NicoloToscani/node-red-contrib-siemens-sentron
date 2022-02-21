@@ -5,7 +5,7 @@
         defaults: {
             name: {value:""},
             unitId: {value: "1",required:true},
-            device: {value: "pac1200",required:true},
+            device: {value: "",required:true},
             data: {value: "", required: true}
         },
         inputs:1,
@@ -16,9 +16,12 @@
         },
         <!--When the config screen is opened-->
         oneditprepare: function() {
-        
-            $("#node-input-device").on("change",function() {
             
+            <!--Previous data set-->
+            const myData = this.data;
+            
+            $("#node-input-device").on("change",function() {
+                
                 if (this.value === "") {
                     $("#node-input-data-pac2200").hide();
                     $("#node-input-data-pac1200").hide();
@@ -49,6 +52,7 @@
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();
                     $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac2200 option[value=" +  myData + "]").attr("selected", true); 
                 } 
                 else if (this.value === "pac1200") {
                     $("#node-input-data-pac2200").hide();
@@ -64,6 +68,7 @@
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();   
                     $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac1200 option[value=" +  myData + "]").attr("selected", true);  
                 } 
                 else if (this.value === "pac1600") {
                     $("#node-input-data-pac2200").hide();
@@ -78,7 +83,8 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();  
-                    $("#node-input-data-powercenter1000").hide(); 
+                    $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac1600 option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "pac3100") {
                     $("#node-input-data-pac2200").hide();
@@ -93,7 +99,8 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide(); 
-                    $("#node-input-data-powercenter1000").hide();  
+                    $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac3100 option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "pac3200T") {
                     $("#node-input-data-pac2200").hide();
@@ -109,6 +116,7 @@
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();   
                     $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac3200T option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "pac4200") {
                     $("#node-input-data-pac2200").hide();
@@ -123,7 +131,8 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide(); 
-                    $("#node-input-data-powercenter1000").hide();  
+                    $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac4200 option[value=" +  myData + "]").attr("selected", true);   
                 } 
                 else if (this.value == "pac5200") {
                     $("#node-input-data-pac2200").hide();
@@ -139,6 +148,7 @@
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();   
                     $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac5200 option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "sem3") {
                     $("#node-input-data-pac2200").hide();
@@ -154,6 +164,7 @@
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();   
                     $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-sem3 option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "atc6300") {
                     $("#node-input-data-pac2200").hide();
@@ -168,7 +179,8 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").show();
                     $("#node-input-data-3va").hide();  
-                    $("#node-input-data-powercenter1000").hide(); 
+                    $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-atc6300 option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "3va") {
                     $("#node-input-data-pac2200").hide();
@@ -184,6 +196,7 @@
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").show();   
                     $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-3va option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "powercenter1000") {
                     $("#node-input-data-pac2200").hide();
@@ -198,7 +211,8 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();  
-                    $("#node-input-data-powercenter1000").show(); 
+                    $("#node-input-data-powercenter1000").show();
+                    $("#node-input-data-powercenter1000 option[value=" +  myData + "]").attr("selected", true);
                 }
                 else if (this.value == "pac3220") {
                     $("#node-input-data-pac2200").hide();
@@ -213,7 +227,8 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();  
-                    $("#node-input-data-powercenter1000").hide(); 
+                    $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac3220 option[value=" +  myData + "]").attr("selected", true);
                 } 
                 else if (this.value == "pac3120") {
                     $("#node-input-data-pac2200").hide();
@@ -228,8 +243,10 @@
                     $("#node-input-data-sem3").hide();
                     $("#node-input-data-atc6300").hide();
                     $("#node-input-data-3va").hide();  
-                    $("#node-input-data-powercenter1000").hide(); 
+                    $("#node-input-data-powercenter1000").hide();
+                    $("#node-input-data-pac3120 option[value=" +  myData + "]").attr("selected", true);
                 }
+                
             }).trigger("change");
         }, 
         
@@ -244,7 +261,7 @@
                         
                         let dataValue = $("#node-input-data-pac2200 option:selected");
                         this.data = dataValue.val();
-                    
+              
                     } 
                     
                     <!--PAC1200-->
@@ -252,7 +269,7 @@
                         
                         let dataValue = $("#node-input-data-pac1200 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--PAC1600-->
@@ -260,7 +277,7 @@
                         
                         let dataValue = $("#node-input-data-pac1600 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--PAC3100-->
@@ -268,7 +285,7 @@
                         
                         let dataValue = $("#node-input-data-pac3100 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--PAC3120-->
@@ -284,7 +301,7 @@
                         
                         let dataValue = $("#node-input-data-pac3200T option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--PAC4200-->
@@ -292,7 +309,7 @@
                         
                         let dataValue = $("#node-input-data-pac4200 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--PAC5200-->
@@ -300,7 +317,7 @@
                         
                         let dataValue = $("#node-input-data-pac5200 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--Sem3-->
@@ -308,7 +325,7 @@
                         
                         let dataValue = $("#node-input-data-sem3 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--Atc6300-->
@@ -316,7 +333,7 @@
                         
                         let dataValue = $("#node-input-data-atc6300 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--3va-->
@@ -324,7 +341,7 @@
                         
                         let dataValue = $("#node-input-data-3va option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--Powercenter1000-->
@@ -332,7 +349,7 @@
                         
                         let dataValue = $("#node-input-data-powercenter1000 option:selected");
                         this.data = dataValue.val();
-                    
+                     
                     } 
                     
                     <!--PAC3120-->
@@ -340,7 +357,7 @@
                         
                         let dataValue = $("#node-input-data-pac3120 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
                     
                     <!--PAC3220-->
@@ -348,17 +365,16 @@
                         
                         let dataValue = $("#node-input-data-pac3220 option:selected");
                         this.data = dataValue.val();
-                    
+                      
                     } 
                     <!--PAC4200-->
                     if(deviceType.val() == "pac4200") {
                         
                         let dataValue = $("#node-input-data-pac4200 option:selected");
                         this.data = dataValue.val();
-                    
+                        
                     } 
         }
-          
     });
 </script>
 
