@@ -6902,7 +6902,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImp";
-                  res.format = "float64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "powercenter1000";
                 break;
@@ -6915,7 +6915,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExp";
-                  res.format = "float64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "powercenter1000";
                 break;
@@ -6928,7 +6928,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImp";
-                  res.format = "float64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "powercenter1000";
                 break;
@@ -6941,7 +6941,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExp";
-                   res.format = "float64";
+                   res.format = "double";
                   res.unit = "varh";
                   res.model = "powercenter1000";
                 break;
