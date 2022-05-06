@@ -3076,7 +3076,7 @@ module.exports = function(RED) {
                   res.topic = "unbalanceVoltage";
                   res.format = "float32";
                   res.unit = "%";
-                  res.model = "pac3120";
+                  res.model = "pac3220";
                 break;
                 case 36:
                 case "unbalanceCurrent":
@@ -3113,7 +3113,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3220";
                 break;
@@ -3126,7 +3126,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3220";
                 break;
@@ -3139,7 +3139,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3220";
                 break;
@@ -3152,7 +3152,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3220";
                 break;
@@ -3165,7 +3165,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3220";
                 break;
@@ -3178,7 +3178,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3220";
                 break;
@@ -3191,7 +3191,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3220";
                 break;
@@ -3204,7 +3204,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3220";
                 break;
@@ -3217,7 +3217,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3220";
                 break;
@@ -3230,7 +3230,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3220";
                 break; 
