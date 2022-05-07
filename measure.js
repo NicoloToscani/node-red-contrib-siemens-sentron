@@ -1957,7 +1957,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergy";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3100";
                 break;
@@ -1970,7 +1970,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergy";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3100";
                 break;
@@ -2483,7 +2483,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3120";
                 break;
@@ -2496,7 +2496,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3120";
                 break;
@@ -2509,7 +2509,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3120";
                 break;
@@ -2522,7 +2522,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3120";
                 break;
@@ -2535,7 +2535,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3120";
                 break;
@@ -2548,7 +2548,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3120";
                 break;
@@ -2561,7 +2561,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3120";
                 break;
@@ -2574,7 +2574,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3120";
                 break;
@@ -2587,7 +2587,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3120";
                 break;
@@ -2600,10 +2600,641 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3120";
                 break; 
+              }
+            }
+            // PAC3200
+            else if(settings.device == "pac3200"){
+            
+              switch(settings.data){
+                case 0:
+                case "voltage-L1N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 1,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L1N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 1:
+                case "voltage-L2N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L2N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 2:
+                case "voltage-L3N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 5,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L3N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 3:
+                case "voltage-L1L2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 7,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L1L2";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 4:
+                case "voltage-L2L3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 9,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L2L3";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 5:
+                case "voltage-L3L1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 11,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L3L1";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 6:
+                case "currentL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 13,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL1";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac3200";
+                break;
+                case 7:
+                case "currentL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 15,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL2";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac3200";
+                break;
+                case 8:
+                case "currentL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 17,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL3";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac3200";
+                break;
+                case 9:
+                case "appPowerL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 19,
+                      quantity: 2,
+                      };
+                  res.topic = "appPowerL1";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac3200";
+                break;
+                case 10:
+                case "appPowerL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 21,
+                      quantity: 2,
+                      };
+                  res.topic = "appPowerL2";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac3200";
+                break;
+                case 11:
+                case "appPowerL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 23,
+                      quantity: 2,
+                      };
+                  res.topic = "appPowerL3";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac3200";
+                break;
+                case 12:
+                case "actPowerL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 25,
+                      quantity: 2,
+                      };
+                  res.topic = "actPowerL1";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac3200";
+                break;
+                case 13:
+                case "actPowerL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 27,
+                      quantity: 2,
+                      };
+                  res.topic = "actPowerL2";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac3200";
+                break;
+                case 14:
+                case "actPowerL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 29,
+                      quantity: 2,
+                      };
+                  res.topic = "actPowerL3";
+                   res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac3200";
+                break;
+                case 15:
+                case "reactPowerL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 31,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPowerL1";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac3200";
+                break;
+                case 16:
+                case "reactPowerL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 33,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPowerL2";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac3200";
+                 break;
+                case 17:
+                case "reactPowerL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 35,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPowerL3";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac3200";
+                break;
+                case 18:
+                case "pFactorL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 37,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactorL1";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac3200";
+                break;
+                case 19:
+                case "pFactorL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 39,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactorL2";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac3200";
+                break;
+                case 20:
+                case "pFactorL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 41,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactorL3";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac3200";
+                break;
+                case 21:
+                case "voltageL1Thdr":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 43,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageL1Thdr";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 22:
+                case "voltageL2Thdr":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 45,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageL2Thdr";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 23:
+                case "voltageL3Thdr":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 47,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageL3Thdr";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 24:
+                case "currentL1Thdr":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 49,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL1Thdr";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 25:
+                case "currentL2Thdr":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 51,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL2Thdr";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 26:
+                case "currentL3Thdr":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 53,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL3Thdr";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 27:
+                case "frequency":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 55,
+                      quantity: 2,
+                      };
+                  res.topic = "frequency";
+                  res.format = "float32";
+                  res.unit = "Hz";
+                  res.model = "pac3200";
+                break;
+                case 28:
+                case "voltageLN-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 57,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageLN-avg";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 29:
+                case "voltageLL-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 59,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageLL-avg";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac3200";
+                break;
+                case 30:
+                case "current-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 61,
+                      quantity: 2,
+                      };
+                  res.topic = "current-avg";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac3200";
+                break;
+                case 31:
+                case "appPower-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 63,
+                      quantity: 2,
+                      };
+                  res.topic = "appPower-tot";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac3200";
+                break;
+                case 32:
+                case "actPower-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 65,
+                      quantity: 2,
+                      };
+                  res.topic = "actPower-tot";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac3200";
+                break;
+                case 33:
+                case "reactPower-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 67,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-tot";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac3200";
+                break;
+                case 34:
+                case "pf-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 69,
+                      quantity: 2,
+                      };
+                  res.topic = "pf-tot";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac3200";
+                break;
+                case 35:
+                case "unbalanceVoltage":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 71,
+                      quantity: 2,
+                      };
+                  res.topic = "unbalanceVoltage";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 36:
+                case "unbalanceCurrent":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 73,
+                      quantity: 2,
+                      };
+                  res.topic = "unbalanceCurrent";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac3200";
+                break;
+                case 37:
+                case "current-In":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 223,
+                      quantity: 2,
+                      };
+                  res.topic = "current-In";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac3200";
+                break;
+                case 38:
+                case "actEnergyImpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 801,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyImpTariff1";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac3200";
+                break;
+                case 39:
+                case "actEnergyImpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 805,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyImpTariff2";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac3200";
+                break;
+                case 40:
+                case "actEnergyExpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 809,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyExpTariff1";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac3200";
+                break;
+                case 41:
+                case "actEnergyExpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 813,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyExpTariff2";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac3200";
+                break;
+                case 42:
+                case "reactEnergyImpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 817,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyImpTariff1";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac3200";
+                break;
+                case 43:
+                case "reactEnergyImpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 821,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyImpTariff2";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac3200";
+                break;
+                case 44:
+                case "reactEnergyExpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 825,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyExpTariff1";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac3200";
+                break;
+                case 45:
+                case "reactEnergyExpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 829,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyExpTariff2";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac3200";
+                break;
+                case 46:
+                case "appEnergyTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 833,
+                      quantity: 4,
+                      };
+                  res.topic = "appEnergyTariff1";
+                  res.format = "double";
+                  res.unit = "VAh";
+                  res.model = "pac3200";
+                break;
+                case 47:
+                case "appEnergyTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 837,
+                      quantity: 4,
+                      };
+                  res.topic = "appEnergyTariff2";
+                  res.format = "double";
+                  res.unit = "VAh";
+                  res.model = "pac3200";
+                break; 
+                
               }
             }
             // PAC3220
@@ -3705,7 +4336,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3718,7 +4349,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3731,7 +4362,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3744,7 +4375,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3757,7 +4388,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3770,7 +4401,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3783,7 +4414,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3796,7 +4427,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3809,7 +4440,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -3822,7 +4453,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -3835,7 +4466,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff1L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3848,7 +4479,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff2L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3861,7 +4492,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff1L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3874,7 +4505,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff2L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3887,7 +4518,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff1L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3900,7 +4531,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff2L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3913,7 +4544,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff1L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3926,7 +4557,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff2L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -3939,7 +4570,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff1L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -3952,7 +4583,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff2L1";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -3965,7 +4596,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3978,7 +4609,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -3991,7 +4622,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -4004,7 +4635,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -4017,7 +4648,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4030,7 +4661,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4043,7 +4674,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4056,7 +4687,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4069,7 +4700,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -4082,7 +4713,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -4095,7 +4726,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -4108,7 +4739,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -4121,7 +4752,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -4134,7 +4765,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "Wh";
                   res.model = "pac3200T";
                 break;
@@ -4147,7 +4778,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4160,7 +4791,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4173,7 +4804,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4186,7 +4817,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExpTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "varh";
                   res.model = "pac3200T";
                 break;
@@ -4199,7 +4830,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff1L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -4212,7 +4843,7 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "appEnergyTariff2L2";
-                  res.format = "int64";
+                  res.format = "double";
                   res.unit = "VAh";
                   res.model = "pac3200T";
                 break;
@@ -5755,7 +6386,14 @@ module.exports = function(RED) {
             else if(settings.device == "sem3"){
             
               switch(settings.data){
-                case 0:
+                
+              }
+            }
+            // ATC6300
+            else if(settings.device == "atc6300"){
+            
+              switch(settings.data){
+	        case 0:
                 case "voltageLine1-L1-N":
                   res.payload = {
                       fc: 3,
@@ -5766,7 +6404,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine1-L1-N";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 1:
                 case "voltageLine1-L2-N":
@@ -5779,7 +6417,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine1-L2-N";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 2:
                 case "voltageLine1-L3-N":
@@ -5792,7 +6430,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine1-L3-N";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 3:
                 case "voltageLine1-L1-L2":
@@ -5805,7 +6443,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine1-L1-L2";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 4:
                 case "voltageLine1-L2-L3":
@@ -5818,7 +6456,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine1-L2-L3";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 5:
                 case "voltageLine1-L3-L1":
@@ -5831,7 +6469,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine1-L3-L1";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 6:
                 case "voltageLine2-L1-N":
@@ -5844,7 +6482,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine2-L1-N";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 7:
                 case "voltageLine2-L2-N":
@@ -5857,7 +6495,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine2-L2-N";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 8:
                 case "voltageLine2-L3-N":
@@ -5870,7 +6508,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine2-L3-N";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 9:
                 case "voltageLine2-L1-L2":
@@ -5883,7 +6521,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine2-L1-L2";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 10:
                 case "voltageLine2-L2-L3":
@@ -5896,7 +6534,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine2-L2-L3";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 11:
                 case "voltageLine2-L3-L1":
@@ -5909,7 +6547,7 @@ module.exports = function(RED) {
                   res.topic = "voltageLine2-L3-L1";
                   res.format = "uint32";
                   res.unit = "V";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 12:
                 case "frequencyLine1":
@@ -5922,7 +6560,7 @@ module.exports = function(RED) {
                   res.topic = "frequencyLine1";
                   res.format = "uint32";
                   res.unit = "Hz";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 13:
                 case "frequencyLine2":
@@ -5935,7 +6573,7 @@ module.exports = function(RED) {
                   res.topic = "frequencyLine2";
                   res.format = "uint32";
                   res.unit = "Hz";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 14:
                 case "batteryVoltage":
@@ -5948,7 +6586,7 @@ module.exports = function(RED) {
                   res.topic = "batteryVoltage";
                   res.format = "uint32";
                   res.unit = "V DC";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 15:
                 case "totalTime":
@@ -5961,7 +6599,7 @@ module.exports = function(RED) {
                   res.topic = "totalTime";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 16:
                 case "timeLine1":
@@ -5974,7 +6612,7 @@ module.exports = function(RED) {
                   res.topic = "timeLine1";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 17:
                 case "timeLine2":
@@ -5987,7 +6625,7 @@ module.exports = function(RED) {
                   res.topic = "timeLine2";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 18:
                 case "timeLine1not":
@@ -6000,7 +6638,7 @@ module.exports = function(RED) {
                   res.topic = "timeLine1not";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 19:
                 case "timeLine2not":
@@ -6013,7 +6651,7 @@ module.exports = function(RED) {
                   res.topic = "timeLine2not";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 20:
                 case "timeLine1breakClose":
@@ -6026,7 +6664,7 @@ module.exports = function(RED) {
                   res.topic = "timeLine1breakClose";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 21:
                 case "timeLine2breakClose":
@@ -6039,7 +6677,7 @@ module.exports = function(RED) {
                   res.topic = "timeLine2breakClose";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 22:
                 case "totalClosed":
@@ -6052,7 +6690,7 @@ module.exports = function(RED) {
                   res.topic = "totalClosed";
                   res.format = "uint32";
                   res.unit = "s";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 23:
                 case "line1Aut":
@@ -6065,7 +6703,7 @@ module.exports = function(RED) {
                   res.topic = "line1Aut";
                   res.format = "uint32";
                   res.unit = "";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 24:
                 case "line2Aut":
@@ -6078,7 +6716,7 @@ module.exports = function(RED) {
                   res.topic = "line2Aut";
                   res.format = "uint32";
                   res.unit = "";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 25:
                 case "line1Man":
@@ -6091,7 +6729,7 @@ module.exports = function(RED) {
                   res.topic = "line1Man";
                   res.format = "uint32";
                   res.unit = "";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break;
                 case 26:
                 case "line2Man":
@@ -6104,15 +6742,112 @@ module.exports = function(RED) {
                   res.topic = "line2Man";
                   res.format = "uint32";
                   res.unit = "";
-                  res.model = "sem3";
+                  res.model = "atc6300";
                 break; 
-              }
-            }
-            // ATC6300
-            else if(settings.device == "atc6300"){
-            
-              switch(settings.data){
-                
+                case 27:
+                case "breaker1AlarmsNumber":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 57,
+                      quantity: 2,
+                      };
+                  res.topic = "breaker1AlarmsNumber";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "atc6300";
+                break; 
+                case 28:
+                case "breaker2AlarmsNumber":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 59,
+                      quantity: 2,
+                      };
+                  res.topic = "breaker2AlarmsNumber";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "atc6300";
+                break; 
+                case 29:
+                case "minBatteryVoltage":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 79,
+                      quantity: 2,
+                      };
+                  res.topic = "minBatteryVoltage";
+                  res.format = "uint32";
+                  res.unit = "V";
+                  res.model = "atc6300";
+                break; 
+                case 30:
+                case "maxBatteryVoltage":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 81,
+                      quantity: 2,
+                      };
+                  res.topic = "maxBatteryVoltage";
+                  res.format = "uint32";
+                  res.unit = "V";
+                  res.model = "atc6300";
+                break;
+                case 31:
+                case "maintenanceHoursLine1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 83,
+                      quantity: 2,
+                      };
+                  res.topic = "maintenanceHoursLine1";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "atc6300";
+                break;
+                case 32:
+                case "maintenanceHoursLine2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 85,
+                      quantity: 2,
+                      };
+                  res.topic = "maintenanceHoursLine2";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "atc6300";
+                break;
+                case 33:
+                case "maintenanceOperatingCyclesLine1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 87,
+                      quantity: 2,
+                      };
+                  res.topic = "maintenanceOperatingCyclesLine1";
+                  res.format = "int32";
+                  res.unit = "";
+                  res.model = "atc6300";
+                break;
+                case 34:
+                case "maintenanceOperatingCyclesLine2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 89,
+                      quantity: 2,
+                      };
+                  res.topic = "maintenanceOperatingCyclesLine2";
+                  res.format = "int32";
+                  res.unit = "";
+                  res.model = "atc6300";
+                break;
               }
             }
             // 3VA
@@ -6700,8 +7435,8 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyImp";
-                  res.format = "float64";
-                  res.unit = "Wh";
+                  res.format = "int64";
+                  res.unit = "kWh";
                   res.model = "3va";
                 break;
                 case 45:
@@ -6713,8 +7448,8 @@ module.exports = function(RED) {
                       quantity: 4,
                       };
                   res.topic = "actEnergyExp";
-                  res.format = "float64";
-                  res.unit = "Wh";
+                  res.format = "int64";
+                  res.unit = "kWh";
                   res.model = "3va";
                 break;
                 case 46:
@@ -6722,12 +7457,12 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 81,
+                      address: 129,
                       quantity: 4,
                       };
                   res.topic = "reactEnergyImp";
-                  res.format = "float64";
-                  res.unit = "varh";
+                  res.format = "int64";
+                  res.unit = "kvarh";
                   res.model = "3va";
                 break;
                 case 47:
@@ -6735,12 +7470,25 @@ module.exports = function(RED) {
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 85,
+                      address: 133,
                       quantity: 4,
                       };
                   res.topic = "reactEnergyExp";
-                  res.format = "float64";
-                  res.unit = "varh";
+                  res.format = "int64";
+                  res.unit = "kvarh";
+                  res.model = "3va";
+                break;
+                case 48:
+                case "appEnergy":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 137,
+                      quantity: 4,
+                      };
+                  res.topic = "appEnergy";
+                  res.format = "int64";
+                  res.unit = "kVAh";
                   res.model = "3va";
                 break;
                 
