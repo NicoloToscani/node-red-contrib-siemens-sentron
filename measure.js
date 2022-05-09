@@ -462,6 +462,137 @@ module.exports = function(RED) {
                   res.unit = "varh";
                   res.model = "pac2200";
                 break;
+                case 33:
+                case "actEnergyImpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 801,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyImpTariff1";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac2200";
+                break;
+                case 34:
+                case "actEnergyImpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 805,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyImpTariff2";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac2200";
+                break;
+                case 35:
+                case "actEnergyExpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 809,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyExpTariff1";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac2200";
+                break;
+                case 36:
+                case "actEnergyExpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 813,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyExpTariff2";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "pac2200";
+                break;
+                case 37:
+                case "reactEnergyImpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 817,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyImpTariff1";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac2200";
+                break;
+                case 38:
+                case "reactEnergyImpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 821,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyImpTariff2";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac2200";
+                break;
+                case 39:
+                case "reactEnergyExpTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 825,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyExpTariff1";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac2200";
+                break;
+                case 40:
+                case "reactEnergyExpTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 829,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyExpTariff2";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "pac2200";
+                break;
+                case 41:
+                case "appEnergyTariff1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 833,
+                      quantity: 4,
+                      };
+                  res.topic = "appEnergyTariff1";
+                  res.format = "double";
+                  res.unit = "VAh";
+                  res.model = "pac2200";
+                break;
+                case 42:
+                case "appEnergyTariff2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 837,
+                      quantity: 4,
+                      };
+                  res.topic = "appEnergyTariff2";
+                  res.format = "double";
+                  res.unit = "VAh";
+                  res.model = "pac2200";
+                break; 
+              }
               }
             }
             // PAC1200
