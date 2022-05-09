@@ -66,6 +66,16 @@ List of **PAC2200** meter data:
 |  Reactive energy import            | varh                  | Float 32        |
 |  Active energy export              | Wh                    | Float 32        |
 |  Reactive energy export            | varh                  | Float 32        |
+|  Active energy import tariff 1     | Wh                    | Double          |
+|  Active energy import tariff 2     | Wh                    | Double          |
+|  Active energy export tariff 1     | Wh                    | Double          |
+|  Active energy export tariff 2     | Wh                    | Double          |
+|  Reactive energy import tariff 1   | varh                  | Double          |
+|  Reactive energy import tariff 2   | varh                  | Double          |
+|  Reactive energy export tariff 1   | varh                  | Double          |
+|  Reactive energy export tariff 2   | varh                  | Double          |
+|  Apparent energy tariff 1          | VAh                   | Double          |
+|  Apparent energy tariff 2          | VAh                   | Double          |
 
 
 List of **7KN Powercenter 1000** meter data:
