@@ -27,6 +27,34 @@ Use the `getter` node to convert the values from the modbus response into human 
 
 Wire the second output of the `Modbus Flex Getter` to the input of the `getter`.
 
+## Supported devices
+
+### Measuring devices
++ PAC1200
++ PAC1600
++ PAC2200
++ PAC3100
++ PAC3120
++ PAC3200
++ PAC3220
++ PAC3200T
++ PAC4200
++ PAC5200
++ SEM3
+
+### Transfer controller
++ ATC6300
+
+### Molded case circuit breakers
++ 3VA
+
+### Dataserver
++ 7KN Powercenter 1000
+
+### RF devices
++ 5SL6 COM
+
+
 ## Usage
 List of **PAC2200** meter data:
 
