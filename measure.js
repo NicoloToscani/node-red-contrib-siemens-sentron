@@ -593,7 +593,6 @@ module.exports = function(RED) {
                   res.model = "pac2200";
                 break; 
               }
-              }
             }
             // PAC1200
             if(settings.device == "pac1200"){
