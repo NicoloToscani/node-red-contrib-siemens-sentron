@@ -5804,6 +5804,714 @@ module.exports = function(RED) {
                 break;
               }
             }
+            // PAC5100
+            else if(settings.device == "pac5100"){
+            
+              switch(settings.data){
+                case 0:
+                case "voltage-L1N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 201,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L1N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 1:
+                case "voltage-L2N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 203,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L2N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 2:
+                case "voltage-L3N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 205,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L3N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 3:
+                case "voltage-N":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 207,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-N";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 4:
+                case "currentL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 209,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL1";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac5100";
+                break;
+                case 5:
+                case "currentL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 211,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL2";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac5100";
+                break;
+                case 6:
+                case "currentL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 213,
+                      quantity: 2,
+                      };
+                  res.topic = "currentL3";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac5100";
+                break;
+                case 7:
+                case "current-In":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 215,
+                      quantity: 2,
+                      };
+                  res.topic = "current-In";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac5100";
+                break;
+                case 8:
+                case "voltage-L1L2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 217,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L1L2";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 9:
+                case "voltage-L2L3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 219,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L2L3";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 10:
+                case "voltage-L3L1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 221,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-L3L1";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 11:
+                case "voltageLN-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 223,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageLN-avg";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "pac5100";
+                break;
+                case 12:
+                case "current-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 225,
+                      quantity: 2,
+                      };
+                  res.topic = "current-avg";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "pac5100";
+                break;
+                case 13:
+                case "actPowerL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 227,
+                      quantity: 2,
+                      };
+                  res.topic = "actPowerL1";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac5100";
+                break;
+                case 14:
+                case "actPowerL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 229,
+                      quantity: 2,
+                      };
+                  res.topic = "actPowerL2";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac5100";
+                break;
+                case 15:
+                case "actPowerL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 231,
+                      quantity: 2,
+                      };
+                  res.topic = "actPowerL3";
+                   res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac5100";
+                break;
+                case 16:
+                case "actPower-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 233,
+                      quantity: 2,
+                      };
+                  res.topic = "actPower-tot";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "pac5100";
+                break;
+                case 17:
+                case "reactPowerL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 235,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPowerL1";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 18:
+                case "reactPowerL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 237,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPowerL2";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 19:
+                case "reactPowerL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 239,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPowerL3";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 20:
+                case "reactPower-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 241,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-tot";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 21:
+                case "appPowerL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 243,
+                      quantity: 2,
+                      };
+                  res.topic = "appPowerL1";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac5100";
+                break;
+                case 22:
+                case "appPowerL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 245,
+                      quantity: 2,
+                      };
+                  res.topic = "appPowerL2";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac5100";
+                break;
+                case 23:
+                case "appPowerL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 247,
+                      quantity: 2,
+                      };
+                  res.topic = "appPowerL3";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac5100";
+                break;
+                case 24:
+                case "appPower-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 249,
+                      quantity: 2,
+                      };
+                  res.topic = "appPower-tot";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "pac5100";
+                break;
+                case 25:
+                case "cosPhiL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 251,
+                      quantity: 2,
+                      };
+                  res.topic = "cosPhiL1";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 26:
+                case "cosPhiL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 253,
+                      quantity: 2,
+                      };
+                  res.topic = "cosPhiL2";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 27:
+                case "cosPhiL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 255,
+                      quantity: 2,
+                      };
+                  res.topic = "cosPhiL3";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 28:
+                case "cosPhi-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 257,
+                      quantity: 2,
+                      };
+                  res.topic = "cosPhi-tot";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 29:
+                case "pFactorL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 259,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactorL1";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 30:
+                case "pFactorL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 261,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactorL2";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 31:
+                case "pFactorL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 263,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactorL3";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 32:
+                case "pFactor-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 265,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactor-tot";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 33:
+                case "phaseAngleL11":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 267,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL11";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 34:
+                case "phaseAngleL12":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 269,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL12";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 35:
+                case "phaseAngleL13":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 271,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL13";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 36:
+                case "phaseAngle-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 273,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngle-tot";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 37:
+                case "frequency":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 275,
+                      quantity: 2,
+                      };
+                  res.topic = "frequency";
+                  res.format = "float32";
+                  res.unit = "Hz";
+                  res.model = "pac5100";
+                break;
+                case 38:
+                case "ampUnbalanceVoltage":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 277,
+                      quantity: 2,
+                      };
+                  res.topic = "ampUnbalanceVoltage";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac5100";
+                break;
+                case 39:
+                case "ampUnbalanceCurrent":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 279,
+                      quantity: 2,
+                      };
+                  res.topic = "ampUnbalanceCurrent";
+                  res.format = "float32";
+                  res.unit = "%";
+                  res.model = "pac5100";
+                break;
+                case 40:
+                case "voltageThdL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 295,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageThdL1";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 41:
+                case "voltageThdL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 297,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageThdL2";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 42:
+                case "voltageThdL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 299,
+                      quantity: 2,
+                      };
+                  res.topic = "voltageThdL3";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 43:
+                case "currentThdL1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 301,
+                      quantity: 2,
+                      };
+                  res.topic = "currentThdL1";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 44:
+                case "currentThdL2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 303,
+                      quantity: 2,
+                      };
+                  res.topic = "currentThdL2";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 45:
+                case "currentThdL3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 305,
+                      quantity: 2,
+                      };
+                  res.topic = "currentThdL3";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "pac5100";
+                break;
+                case 46:
+                case "phaseAngleL12-voltage":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 307,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL12-voltage";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 47:
+                case "phaseAngleL13-voltage":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 309,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL13-voltage";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 48:
+                case "phaseAngleL12-current":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 311,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL12-current";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 49:
+                case "phaseAngleL13-current":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 313,
+                      quantity: 2,
+                      };
+                  res.topic = "phaseAngleL13-current";
+                  res.format = "float32";
+                  res.unit = "°";
+                  res.model = "pac5100";
+                break;
+                case 49:
+                case "reactPower-Q1-L1":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 315,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-Q1-L1";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 50:
+                case "reactPower-Q1-L2":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 317,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-Q1-L2";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 51:
+                case "reactPower-Q1-L3":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 319,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-Q1-L3";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+                case 52:
+                case "reactPower-Q1-tot":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 321,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-Q1-tot";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "pac5100";
+                break;
+              }
+            }
             // PAC5200
             else if(settings.device == "pac5200"){
             
