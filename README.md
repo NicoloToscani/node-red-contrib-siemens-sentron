@@ -69,7 +69,7 @@ Wire the second output of the `Modbus Flex Getter` to the input of the `getter`.
 ![device-config](docs/device-config-a.png)
 
 ### Meter data 
-![data-config](docs/data-conf-a.png)
+![data-config](docs/data-config-a.png)
 
 ### Circuit protection device
 ![circuit-protection-device](docs/circuit-protection.png)
