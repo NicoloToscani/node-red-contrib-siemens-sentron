@@ -5,6 +5,7 @@ Node-RED nodes to read electrical measures from [Siemens SENTRON](https://new.si
 * [How to use](#how-to-use)
 * [Supported devices](#supported-devices)
 * [Usage](#usage)
+* [Meters data](#meters-data)
 
 ## Install
 You can install these nodes directly from the **Manage Palette** menu in the [Node-RED](https://nodered.org/) interface.
@@ -57,6 +58,19 @@ Wire the second output of the `Modbus Flex Getter` to the input of the `getter`.
 
 ### RF devices
 + 5SL6 COM
+
+## Usage
+### Device type
+![data-config](docs/device-conf.png)
+
+### Meter data 
+![data-config](docs/data-conf.png)
+
+### Message object 
+![data-config](docs/message-format.png)
+
+### Sample flow
+![sample-flow](docs/sample-flow.png)
 
 
 ## Meters data
