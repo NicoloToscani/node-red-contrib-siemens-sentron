@@ -4,6 +4,7 @@ Node-RED nodes to read electrical measures from [Siemens SENTRON](https://new.si
 * [Install](#install)
 * [How to use](#how-to-use)
 * [Supported devices](#supported-devices)
+* [Meters data](#meters-data)
 
 ## Install
 You can install these nodes directly from the **Manage Palette** menu in the [Node-RED](https://nodered.org/) interface.
@@ -58,7 +59,7 @@ Wire the second output of the `Modbus Flex Getter` to the input of the `getter`.
 + 5SL6 COM
 
 
-## Usage
+## Meters data
 List of **PAC2200** meter data:
 
 | Measure                            | Units                 | Type            | 
