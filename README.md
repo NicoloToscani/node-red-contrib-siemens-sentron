@@ -1,6 +1,7 @@
 # node-red-contrib-siemens-sentron
 Node-RED nodes to read electrical measures from Siemens SENTRON series over Modbus TCP/IP.
 ## Node-RED configurator to read Siemens SENTRON series over Modbus TCP/IP
+* [Install](#install)
 
 ## Install
 You can install these nodes directly from the **Manage Palette** menu in the Node-RED interface.
