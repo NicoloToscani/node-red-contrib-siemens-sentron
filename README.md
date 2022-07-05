@@ -1,6 +1,6 @@
 # node-red-contrib-siemens-sentron
 Node-RED nodes to read electrical measures from [Siemens SENTRON](https://new.siemens.com/global/en/products/energy/low-voltage/components/sentron-measuring-devices-and-power-monitoring.html) series over Modbus TCP/IP.
-## Node-RED configurator to read Siemens SENTRON series over Modbus TCP/IP
+## Table of Contents
 * [Install](#install)
 * [How to use](#how-to-use)
 * [Supported devices](#supported-devices)
