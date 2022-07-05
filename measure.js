@@ -4,6 +4,7 @@ module.exports = function(RED) {
         this.name = config.name;
         this.unitId = config.unitId;
         this.device = config.device;
+        this.deviceProtection = config.deviceProtection;
         this.data = config.data;
         var node = this;
         node.on('input', function(msg) {
@@ -12,6 +13,7 @@ module.exports = function(RED) {
              name: p.name || node.name || "",
              unitId: p.unitId || node.unitId,
              device: p.device || node.device,
+             deviceProtection: p.deviceProtection || node.deviceProtection,
              data: p.data || node.data,
             };
             var res = {};
@@ -8332,8 +8334,8 @@ module.exports = function(RED) {
                 
               }
             }
-            // Powercenter 1000
-            else if(settings.device == "powercenter1000"){
+            // Powercenter 1000 - 5SL6 COM
+            else if(settings.deviceProtection == "5sl6com" && settings.device == "poc1000"){
               
               switch(settings.data){
                 case 0:
@@ -8347,7 +8349,7 @@ module.exports = function(RED) {
                   res.topic = "temperature-inst";
                   res.format = "float32";
                   res.unit = "°C";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 1:
                 case "temperature-avg":
@@ -8360,7 +8362,7 @@ module.exports = function(RED) {
                   res.topic = "temperature-avg";
                   res.format = "float32";
                   res.unit = "°C";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 2:
                 case "current-inst":
@@ -8373,7 +8375,7 @@ module.exports = function(RED) {
                   res.topic = "current-inst";
                   res.format = "float32";
                   res.unit = "A";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 3:
                 case "current-avg":
@@ -8386,7 +8388,7 @@ module.exports = function(RED) {
                   res.topic = "current-avg";
                   res.format = "float32";
                   res.unit = "A";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 4:
                 case "current-max":
@@ -8399,7 +8401,7 @@ module.exports = function(RED) {
                   res.topic = "current-max";
                   res.format = "float32";
                   res.unit = "A";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 5:
                 case "voltage-LN":
@@ -8412,7 +8414,7 @@ module.exports = function(RED) {
                   res.topic = "voltage-LN";
                   res.format = "float32";
                   res.unit = "V";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 6:
                 case "frequency":
@@ -8425,7 +8427,7 @@ module.exports = function(RED) {
                   res.topic = "frequency";
                   res.format = "float32";
                   res.unit = "Hz";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 7:
                 case "actPower-L":
@@ -8438,7 +8440,7 @@ module.exports = function(RED) {
                   res.topic = "actPower-L";
                   res.format = "float32";
                   res.unit = "W";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 8:
                 case "appPower-L":
@@ -8451,7 +8453,7 @@ module.exports = function(RED) {
                   res.topic = "appPower-L";
                   res.format = "float32";
                   res.unit = "VA";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 9:
                 case "reactPower-L":
@@ -8464,7 +8466,7 @@ module.exports = function(RED) {
                   res.topic = "reactPower-L";
                   res.format = "float32";
                   res.unit = "var";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 10:
                 case "pFactor-L":
@@ -8477,7 +8479,7 @@ module.exports = function(RED) {
                   res.topic = "pFactor-L";
                   res.format = "float32";
                   res.unit = "";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 11:
                 case "actEnergyImp":
@@ -8490,7 +8492,7 @@ module.exports = function(RED) {
                   res.topic = "actEnergyImp";
                   res.format = "double";
                   res.unit = "Wh";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 12:
                 case "actEnergyExp":
@@ -8503,7 +8505,7 @@ module.exports = function(RED) {
                   res.topic = "actEnergyExp";
                   res.format = "double";
                   res.unit = "Wh";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 13:
                 case "reactEnergyImp":
@@ -8516,7 +8518,7 @@ module.exports = function(RED) {
                   res.topic = "reactEnergyImp";
                   res.format = "double";
                   res.unit = "varh";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
                 case 14:
                 case "reactEnergyExp":
@@ -8529,8 +8531,9 @@ module.exports = function(RED) {
                   res.topic = "reactEnergyExp";
                    res.format = "double";
                   res.unit = "varh";
-                  res.model = "powercenter1000";
+                  res.model = "5sl6com";
                 break;
+                /*
                 case 15:
                 case "status":
                   res.payload = {
@@ -8544,7 +8547,506 @@ module.exports = function(RED) {
                   res.unit = "";
                   res.model = "powercenter1000";
                 break;
+                */
+                case 15:
+                case "alarmsStatus":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2559,
+                      quantity: 2,
+                      };
+                  res.topic = "alarmsStatus";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "5sl6com";
+                break;
                 case 16:
+                case "mecOperCycles":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2592,
+                      quantity: 2,
+                      };
+                  res.topic = "mecOperCycles";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sl6com";
+                break;
+                case 17:
+                case "tripOpers":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2601,
+                      quantity: 2,
+                      };
+                  res.topic = "tripOpers";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sl6com";
+                break;
+                case 18:
+                case "shortCircTrip":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2623,
+                      quantity: 2,
+                      };
+                  res.topic = "shortCircTrip";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sl6com";
+                break;
+              }
+            }
+            
+            // Powercenter 1000 - 5SV6 COM
+            else if(settings.deviceProtection == "5sv6com" && settings.device == "poc1000"){
+              
+              switch(settings.data){
+                case 0:
+                case "temperature-inst":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3071,
+                      quantity: 2,
+                      };
+                  res.topic = "temperature-inst";
+                  res.format = "float32";
+                  res.unit = "°C";
+                  res.model = "5sv6com";
+                break;
+                case 1:
+                case "temperature-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3073,
+                      quantity: 2,
+                      };
+                  res.topic = "temperature-avg";
+                  res.format = "float32";
+                  res.unit = "°C";
+                  res.model = "5sv6com";
+                break;
+                case 2:
+                case "current-inst":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3075,
+                      quantity: 2,
+                      };
+                  res.topic = "current-inst";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "5sv6com";
+                break;
+                case 3:
+                case "current-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3077,
+                      quantity: 2,
+                      };
+                  res.topic = "current-avg";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "5sv6com";
+                break;
+                case 4:
+                case "current-max":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3079,
+                      quantity: 2,
+                      };
+                  res.topic = "current-max";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "5sv6com";
+                break;
+                case 5:
+                case "voltage-LN":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3081,
+                      quantity: 2,
+                      };
+                  res.topic = "voltage-LN";
+                  res.format = "float32";
+                  res.unit = "V";
+                  res.model = "5sv6com";
+                break;
+                case 6:
+                case "frequency":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3083,
+                      quantity: 2,
+                      };
+                  res.topic = "frequency";
+                  res.format = "float32";
+                  res.unit = "Hz";
+                  res.model = "5sv6com";
+                break;
+                case 7:
+                case "actPower-L":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3085,
+                      quantity: 2,
+                      };
+                  res.topic = "actPower-L";
+                  res.format = "float32";
+                  res.unit = "W";
+                  res.model = "5sv6com";
+                break;
+                case 8:
+                case "appPower-L":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3087,
+                      quantity: 2,
+                      };
+                  res.topic = "appPower-L";
+                  res.format = "float32";
+                  res.unit = "VA";
+                  res.model = "5sv6com";
+                break;
+                case 9:
+                case "reactPower-L":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3089,
+                      quantity: 2,
+                      };
+                  res.topic = "reactPower-L";
+                  res.format = "float32";
+                  res.unit = "var";
+                  res.model = "5sv6com";
+                break;
+                case 10:
+                case "pFactor-L":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3091,
+                      quantity: 2,
+                      };
+                  res.topic = "pFactor-L";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sv6com";
+                break;
+                case 11:
+                case "actEnergyImp":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3093,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyImp";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "5sv6com";
+                break;
+                case 12:
+                case "actEnergyExp":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3097,
+                      quantity: 4,
+                      };
+                  res.topic = "actEnergyExp";
+                  res.format = "double";
+                  res.unit = "Wh";
+                  res.model = "5sv6com";
+                break;
+                case 13:
+                case "reactEnergyImp":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3101,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyImp";
+                  res.format = "double";
+                  res.unit = "varh";
+                  res.model = "5sv6com";
+                break;
+                case 14:
+                case "reactEnergyExp":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3105,
+                      quantity: 4,
+                      };
+                  res.topic = "reactEnergyExp";
+                   res.format = "double";
+                  res.unit = "varh";
+                  res.model = "5sv6com";
+                break;
+                /*
+                case 15:
+                case "status":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3109,
+                      quantity: 1,
+                      };
+                  res.topic = "status";
+                  res.format = "uint16";
+                  res.unit = "";
+                  res.model = "powercenter1000";
+                break;
+                */
+                case 15:
+                case "alarmsStatus":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2559,
+                      quantity: 2,
+                      };
+                  res.topic = "alarmsStatus";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "5sv6com";
+                break;
+                case 16:
+                case "mecOperCycles":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2592,
+                      quantity: 2,
+                      };
+                  res.topic = "mecOperCycles";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sv6com";
+                break;
+                case 17:
+                case "tripOpers":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2601,
+                      quantity: 2,
+                      };
+                  res.topic = "tripOpers";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sv6com";
+                break;
+                case 18:
+                case "shortCircTrip":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2623,
+                      quantity: 2,
+                      };
+                  res.topic = "shortCircTrip";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5sv6com";
+                break;
+              }
+            }
+            
+            // Powercenter 1000 - 5ST3 COM
+            else if(settings.deviceProtection == "5st3com" && settings.device == "poc1000"){
+              
+              switch(settings.data){
+                case 0:
+                case "temperature-inst":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3071,
+                      quantity: 2,
+                      };
+                  res.topic = "temperature-inst";
+                  res.format = "float32";
+                  res.unit = "°C";
+                  res.model = "5st3com";
+                break;
+                case 1:
+                case "temperature-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3073,
+                      quantity: 2,
+                      };
+                  res.topic = "temperature-avg";
+                  res.format = "float32";
+                  res.unit = "°C";
+                  res.model = "5st3com";
+                break;
+                case 2:
+                case "status":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3109,
+                      quantity: 1,
+                      };
+                  res.topic = "status";
+                  res.format = "uint16";
+                  res.unit = "";
+                  res.model = "5st3com";
+                break;
+                case 3:
+                case "alarmsStatus":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2559,
+                      quantity: 2,
+                      };
+                  res.topic = "alarmsStatus";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "5st3com";
+                break;
+                case 4:
+                case "mecOperCycles":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2592,
+                      quantity: 2,
+                      };
+                  res.topic = "mecOperCycles";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5st3com";
+                break;
+                case 5:
+                case "tripOpers":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2601,
+                      quantity: 2,
+                      };
+                  res.topic = "tripOpers";
+                  res.format = "float32";
+                  res.unit = "";
+                  res.model = "5st3com";
+                break;
+              }
+            }
+            
+             // Powercenter 1000 - 3NA COM
+            else if(settings.deviceProtection == "3nacom" && settings.device == "poc1000"){
+              
+              switch(settings.data){
+                case 0:
+                case "temperature-inst":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3071,
+                      quantity: 2,
+                      };
+                  res.topic = "temperature-inst";
+                  res.format = "float32";
+                  res.unit = "°C";
+                  res.model = "3nacom";
+                break;
+                case 1:
+                case "temperature-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3073,
+                      quantity: 2,
+                      };
+                  res.topic = "temperature-avg";
+                  res.format = "float32";
+                  res.unit = "°C";
+                  res.model = "3nacom";
+                break;
+                case 2:
+                case "current-inst":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3075,
+                      quantity: 2,
+                      };
+                  res.topic = "current-inst";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "3nacom";
+                break;
+                case 3:
+                case "current-avg":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3077,
+                      quantity: 2,
+                      };
+                  res.topic = "current-avg";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "3nacom";
+                break;
+                case 4:
+                case "current-max":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 3079,
+                      quantity: 2,
+                      };
+                  res.topic = "current-max";
+                  res.format = "float32";
+                  res.unit = "A";
+                  res.model = "3nacom";
+                break;
+                case 5:
+                case "alarmsStatus":
+                  res.payload = {
+                      fc: 3,
+                      unitid: settings.unitId,
+                      address: 2559,
+                      quantity: 2,
+                      };
+                  res.topic = "alarmsStatus";
+                  res.format = "uint32";
+                  res.unit = "";
+                  res.model = "3nacom";
+                break;
+              }
+            }
+            
+            // Powercenter 1000 - Powercenter 1000
+            else if(settings.deviceProtection == "powercenter1000" && settings.device == "poc1000"){
+              
+              switch(settings.data){
+                case 1:
                 case "alarmsStatus":
                   res.payload = {
                       fc: 3,
@@ -8557,47 +9059,24 @@ module.exports = function(RED) {
                   res.unit = "";
                   res.model = "powercenter1000";
                 break;
-                case 17:
-                case "mecOperCycles":
+                case 1:
+                case "totalHours":
                   res.payload = {
                       fc: 3,
                       unitid: settings.unitId,
-                      address: 2592,
-                      quantity: 2,
+                      address: 2577,
+                      quantity: 4,
                       };
-                  res.topic = "mecOperCycles";
-                  res.format = "float32";
-                  res.unit = "";
-                  res.model = "powercenter1000";
-                break;
-                case 18:
-                case "tripOpers":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 2601,
-                      quantity: 2,
-                      };
-                  res.topic = "tripOpers";
-                  res.format = "float32";
-                  res.unit = "";
-                  res.model = "powercenter1000";
-                break;
-                case 19:
-                case "shortCircTrip":
-                  res.payload = {
-                      fc: 3,
-                      unitid: settings.unitId,
-                      address: 2623,
-                      quantity: 2,
-                      };
-                  res.topic = "shortCircTrip";
-                  res.format = "float32";
-                  res.unit = "";
+                  res.topic = "totalHours";
+                  res.format = "double";
+                  res.unit = "sec";
                   res.model = "powercenter1000";
                 break;
               }
             }
+            
+            // Add new device here
+            
             
             node.send(res);
         });
