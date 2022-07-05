@@ -151,18 +151,6 @@ List of **7KN Powercenter 1000** meter data:
 
 Set unit IDs (1 .. 24) for paired circuit protection devices. 
 
-### Device type
-![data-config](docs/device-conf.png)
-
-### Meter data 
-![data-config](docs/data-conf.png)
-
-### Message object 
-![data-config](docs/message-format.png)
-
-### Sample flow
-![sample-flow](docs/sample-flow.png)
-
 ## Equipment compatibility
 
 These modules have been developed and tested on:
