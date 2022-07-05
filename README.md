@@ -158,3 +158,4 @@ Set unit IDs (1 .. 24) for paired circuit protection devices.
 These modules have been developed and tested on:
 + SENTRON PAC2200
 + 7KN Powercenter 1000 with 5SL6 COM
+
