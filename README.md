@@ -6,7 +6,7 @@ Node-RED nodes to read electrical measures from [Siemens SENTRON](https://new.si
 * [Supported devices](#supported-devices)
 
 ## Install
-You can install these nodes directly from the **Manage Palette** menu in the Node-RED interface.
+You can install these nodes directly from the **Manage Palette** menu in the [Node-RED](https://nodered.org/) interface.
 
 Alternatively, run the following command in your Node-RED user directory - typically `~/.node-red` on Linux or `%HOMEPATH%\.nodered` on Windows
 
