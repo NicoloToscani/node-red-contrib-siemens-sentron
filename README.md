@@ -60,6 +60,9 @@ Wire the second output of the `Modbus Flex Getter` to the input of the `getter`.
 
 ### RF devices
 + 5SL6 COM
++ 5SV6 COM
++ 5ST3 COM
++ 3NA COM
 
 ## Usage
 ### Device type
