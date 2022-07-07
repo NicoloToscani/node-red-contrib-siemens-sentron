@@ -50,7 +50,7 @@ module.exports = function(RED) {
         this.data = config.data;
         var node = this;
         
-        const allowedModels = ["pac2200", "pac1200", "pac1600", "pac3100", "pac3200T", "pac4200", "pac5200", "sem3", "atc6300", "3va", "powercenter1000", "pac3120", "pac3220", "pac3200"]
+        const allowedModels = ["pac2200", "pac1200", "pac1600", "pac3100", "pac3200T", "pac4200", "pac5200", "sem3", "atc6300", "3va", "powercenter1000", "pac3120", "pac3220", "pac3200", "5st3com", "5sl6com", "5sv6com", "3nacom"]
         
         node.on('input', function(msg) {
         
